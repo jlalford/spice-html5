@@ -178,6 +178,11 @@
                 }
             }
 
+            function sendCtrlAltDel() {
+                SpiceHtml5.sendCtrlAltDel(sc);
+                return false;
+            }
+
             /* SPICE port event listeners
             window.addEventListener('spice-port-data', function(event) {
                 // Here we convert data to text, but really we can obtain binary data also
@@ -190,6 +195,7 @@
             });
             */
 
+            document.getElementById('sendCtrlAltDelButton').onclick = sendCtrlAltDel;
             connect(undefined);
         </script>
 
@@ -204,7 +210,7 @@
         <div id="spice-area">
             <div id="spice-screen" class="spice-screen"></div>
             <div id="spice-controlpane" class="spice-controlpane">
-                <button type="button" onclick="sendCtrlAltDel()">
+                <button type="button" id="sendCtrlAltDelButton">
                    Send Ctrl-Alt-Delete
                 </button>
             </div>
